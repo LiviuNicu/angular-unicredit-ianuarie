@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginDTO } from 'src/app/interfaces/login-dto';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   public isDisabled: boolean = false;
-  public user: any = {
+  public user: LoginDTO = {
     email: 'test@tes.com',
     password: '',
   };
