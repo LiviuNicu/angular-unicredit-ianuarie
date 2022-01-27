@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginDTO } from 'src/app/interfaces/login-dto';
 
 @Component({
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
     password: '',
   };
   public error: boolean | string = false;
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit {
     if (this.user.email && this.user.password) {
       if (this.validateEmail(this.user.email)) {
         // redirect la dashboard
+        this.router.navigate(['/dashboard']);
       } else {
         this.error = 'Email is not valid';
       }

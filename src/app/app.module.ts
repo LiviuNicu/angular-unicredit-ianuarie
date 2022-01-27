@@ -7,6 +7,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CoutriesListComponent } from './shared/coutries-list/coutries-list.component';
+import { VaccinesComponent } from './shared/vaccines/vaccines.component';
+import { CasesComponent } from './shared/cases/cases.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +17,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
+    CoutriesListComponent,
+    VaccinesComponent,
+    CasesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
