@@ -1,1 +1,16 @@
-<p>vaccines works!</p>
+<table class="table table-striped" *ngIf="vaccines">
+  <thead>
+    <tr>
+      <th>Total</th>
+      <th>Vaccinated</th>
+      <th>Partially Vaccinated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ vaccines.administered | number }}</td>
+      <td>{{ vaccines.people_vaccinated | number }}</td>
+      <td>{{ vaccines.people_partially_vaccinated | number }}</td>
+    </tr>
+  </tbody>
+</table>

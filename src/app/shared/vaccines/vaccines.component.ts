@@ -1,15 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'app-vaccines',
   templateUrl: './vaccines.component.html',
-  styleUrls: ['./vaccines.component.scss']
+  styleUrls: ['./vaccines.component.scss'],
 })
 export class VaccinesComponent implements OnInit {
-
-  constructor() { }
+  public vaccines: any;
+  constructor(private mainService: MainService) {}
 
   ngOnInit(): void {
+    this.mainService.countryABObservable.subscribe((countryAb: string) => {
+      console.log('VACCINES', countryAb);
+      this.mainService
+        .getVaccines('ab', countryAb)
+        .subscribe((response: any) => {
+          console.log(response);
+          this.vaccines = response.All;
+        });
+    });
   }
-
 }

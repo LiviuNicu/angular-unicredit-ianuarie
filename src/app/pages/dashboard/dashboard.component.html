@@ -1,1 +1,9 @@
-<p>dashboard works!</p>
+<app-coutries-list
+  [countries]="countriesListArray"
+  (onCountryChanged)="chooseCountry($event)"
+>
+</app-coutries-list>
+<h2>Cases</h2>
+<app-cases></app-cases>
+<h2>Vaccines</h2>
+<app-vaccines></app-vaccines>

@@ -1,1 +1,25 @@
-<p>cases works!</p>
+<div class="alert alert-info" *ngIf="!cases">No data</div>
+<div *ngIf="cases">
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td>Country</td>
+        <td>{{ cases.country | lowercase }}</td>
+      </tr>
+      <tr>
+        <td>Capital</td>
+        <td>{{ cases.capital_city | uppercase }}</td>
+      </tr>
+      <tr>
+        <td>Confirmed</td>
+        <td>
+          {{ cases.confirmed | number: "2.2-2" }}
+        </td>
+      </tr>
+      <tr>
+        <td>Updated date</td>
+        <td>{{ cases.updated | date: "short" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
