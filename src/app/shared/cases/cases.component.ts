@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { debounceTime } from 'rxjs';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -12,11 +13,21 @@ export class CasesComponent implements OnInit {
 
   ngOnInit(): void {
     this.mainService.countryABObservable.subscribe((countryAb: string) => {
-      console.log('CASES', countryAb);
       this.mainService.getCases('ab', countryAb).subscribe((response: any) => {
         console.log(response);
         this.cases = response.All;
       });
     });
+
+    this.mainService.countryObservable
+      .pipe(debounceTime(500))
+      .subscribe((countryName: string) => {
+        this.mainService
+          .getCases('country', countryName)
+          .subscribe((response: any) => {
+            console.log(response);
+            this.cases = response.All;
+          });
+      });
   }
 }

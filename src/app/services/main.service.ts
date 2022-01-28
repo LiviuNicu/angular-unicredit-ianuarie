@@ -12,10 +12,17 @@ export class MainService {
   private countryAB = new Subject<any>();
   public countryABObservable = this.countryAB.asObservable();
 
+  private country = new Subject<any>();
+  public countryObservable = this.country.asObservable();
+
   constructor(private http: HttpClient) {}
 
   updateCountryAB(selectedCountryAB: any) {
     this.countryAB.next(selectedCountryAB);
+  }
+
+  updateCountry(selectedCountryName: any) {
+    this.country.next(selectedCountryName);
   }
 
   getCases(paramName: string, paramValue: string) {

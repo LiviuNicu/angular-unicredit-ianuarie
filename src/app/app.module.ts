@@ -12,6 +12,7 @@ import { VaccinesComponent } from './shared/vaccines/vaccines.component';
 import { CasesComponent } from './shared/cases/cases.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
+import { OnlyLettersDirective } from './directives/only-letters.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
     CoutriesListComponent,
     VaccinesComponent,
     CasesComponent,
+    OnlyLettersDirective,
   ],
   imports: [
     BrowserModule,

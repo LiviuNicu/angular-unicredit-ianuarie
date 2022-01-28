@@ -1,3 +1,10 @@
+<input
+  class="form-control"
+  [(ngModel)]="countryName"
+  (ngModelChange)="countryNameUpdated()"
+  appOnlyLetters
+/>
+
 <app-coutries-list
   [countries]="countriesListArray"
   (onCountryChanged)="chooseCountry($event)"

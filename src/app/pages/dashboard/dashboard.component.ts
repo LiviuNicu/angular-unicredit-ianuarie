@@ -22,6 +22,8 @@ export class DashboardComponent implements OnInit {
     },
   ];
 
+  public countryName: string = '';
+
   constructor(private mainService: MainService) {}
 
   ngOnInit(): void {}
@@ -29,5 +31,9 @@ export class DashboardComponent implements OnInit {
   chooseCountry(contryAB: string) {
     console.log('country ab from dashboard', contryAB);
     this.mainService.updateCountryAB(contryAB);
+  }
+
+  countryNameUpdated() {
+    this.mainService.updateCountry(this.countryName);
   }
 }
